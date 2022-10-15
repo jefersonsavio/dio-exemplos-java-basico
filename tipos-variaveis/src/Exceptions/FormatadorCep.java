@@ -3,28 +3,21 @@ package Exceptions;
 public class FormatadorCep {
 
     public static void main(String[] args) {
+        String cep = "1234567";
 
         try {
-            String cepFormatado = formatarCep("23765064");
+            String cepFormatado = formatarCep(cep);
             System.out.println(cepFormatado);
         } catch (CepInvalidoException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            System.out.println("Favor validar o parametro de cep informado");
         }
 
     }
-
     static String formatarCep(String cep) throws CepInvalidoException{
         if(cep.length() != 8)
-          throw new CepInvalidoException();
+            throw new CepInvalidoException();
 
-          System.out.println("o CEP não corresponde as regras de negocio");
-        
-          //simulando um cep formatado
-          return "23.765-064";
-        
-        
+        //simulando um cep formatado
+        return "23.765-064";
     }
-    
-
 }
